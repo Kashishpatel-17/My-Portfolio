@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashish Patel - STUNNING 3D Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: #090a0f;
+            color: white;
+        }
+
+        /* 🌌 COSMIC BACKGROUND - FIXED */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            z-index: 0;
+        }
+
+        .cosmic-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 200px 20px, #eee, transparent),
+                radial-gradient(1px 1px at 250px 90px, #fff, transparent),
+                radial-gradient(2px 2px at 300px 60px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 350px 120px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 400px 200px;
+            animation: starfield 80s linear infinite;
+        }
+
+        @keyframes starfield {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-400px); }
+        }
+
+        /* 🚀 NAVBAR - PROPERLY VISIBLE */
+        .navbar {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            padding: 18px 50px;
+            z-index: 9999;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .navbar:hover {
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 35px 70px -12px rgba(139, 92, 246, 0.5);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.4s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: white;
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
+        }
+
+        /* 🎭 HERO SECTION - FIXED VISIBILITY */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientShift 4s ease infinite;
+            filter: drop-shadow(0 0 40px rgba(255,215,0,0.5));
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ✨ BEAUTIFUL BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            color: white;
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(139, 92, 246, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* SECTIONS - PROPERLY STRUCTURED */
+        .section {
+            min-height: 100vh;
+            padding: 120px 0;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 30px rgba(0, 245, 255, 0.5));
+        }
+
+        /* 🪐 STUNNING 3D CARDS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(30px);
+            border-radius: 28px;
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899, #10b981);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .card:hover::after {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 
+                0 40px 80px rgba(0,0,0,0.4),
+                0 0 60px rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            background: linear-gradient(45deg, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
+        }
+
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .card-text {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* CONTACT SECTION */
+       .contact-container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.contact-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+  align-items:start;
+}
+
+.contact-card.compact{
+  padding:1.8rem;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:1.2rem;
+}
+
+.contact-icon{
+  font-size:1.4rem;
+}
+
+.contact-info h4{
+  font-size:.9rem;
+  margin-bottom:.2rem;
+}
+
+.contact-info p,
+.contact-info a{
+  font-size:.85rem;
+  opacity:.85;
+}
+
+.form-input.small{
+  width:100%;
+  padding:.7rem .9rem;
+  margin-bottom:.8rem;
+  border-radius:12px;
+  font-size:.85rem;
+}
+
+.btn.full{
+  width:100%;
+  padding:.7rem;
+  font-size:.9rem;
+}
+/* Highlight link rows */
+.link-item{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:14px;
+  padding:.8rem 1rem;
+  transition:.3s;
+}
+
+.link-item a{
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.link-item:hover{
+  background:linear-gradient(
+    135deg,
+    rgba(139,92,246,0.25),
+    rgba(236,72,153,0.25)
+  );
+  box-shadow:0 0 18px rgba(139,92,246,0.35);
+  transform:translateY(-2px);
+}
+
+.link-item:hover a{
+  text-decoration:underline;
+}
+/* Email subtle variant */
+.email-item{
+  background:rgba(255,255,255,0.07);
+}
+
+.email-item:hover{
+  background:linear-gradient(
+    135deg,
+    rgba(99,102,241,0.25),
+    rgba(14,165,233,0.25)
+  );
+  box-shadow:0 0 16px rgba(99,102,241,0.35);
+}
+
+
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 10;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer a {
+            color: #8b5cf6;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ec4899;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                top: 15px;
+                padding: 12px 25px;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+        }
+
+        /* SCROLL ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SCROLL PROGRESS */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899, #10b981);
+            z-index: 99999;
+            transition: width 0.2s ease;
+        }
+		.projects-section {
+    padding: 5rem 8%;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+.project-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.project-description {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.project-list {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+}
+
+.project-list li {
+    margin-bottom: 0.4rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.project-tech {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.project-tag {
+    display: inline-block;
+    margin-top: 0.6rem;
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+.achievement-card {
+   background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;s
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+.achievement-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.achievement-card p,
+.achievement-card li {
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+.achievement-card ul {
+    padding-left: 1.2rem;
+}
+
+.achievement-card a {
+    color: #6a9cff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.achievement-card a:hover {
+    text-decoration: underline;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#about .cards-grid {
+     background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#about .card {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    background: rgba(255, 255, 255, 0.08); /* slightly more opaque than parent */
+    padding: 1.8rem;
+    border-radius: 18px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+#about .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+#about .card h3, 
+#about .card p {
+    color: rgba(255,255,255,0.9);
+}
+ @media (max-width: 768px) {
+
+      nav {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background: rgba(10, 10, 30, 0.95);
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .description {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+	.nav-links a.active {
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress"></div>
+
+    <!-- COSMIC BACKGROUND -->
+    <div class="cosmic-bg"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+			<li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+			<li><a href="#certifications">Certifications</a></li>
+			<li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+			
+			
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+   <section id="home" class="hero">
+    <div class="hero-content fade-in">
+        <h1 class="hero-title">Kashish Patel</h1>
+
+        <p class="hero-subtitle">
+            B.Tech – Computer Science Engineering (AI & Data Science) | Class of 2026
+        </p>
+
+        <p style="font-size: 1.15rem; color: rgba(255,255,255,0.9); max-width: 700px; margin: 1.8rem auto 2.8rem; line-height: 1.6;">
+            Passionate about building intelligent solutions using 
+            <strong>AI, Data Analytics, and Web Development</strong>.  
+            I love transforming data into insights and ideas into impactful applications.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+                <i class="fas fa-code"></i> View My Work
+            </a>
+
+            <a href="https://www.linkedin.com/in/kashish-patel-497b38251/" 
+               class="btn btn-secondary" target="_blank">
+                <i class="fab fa-linkedin"></i> Connect on LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+
+   <!-- ABOUT / MY JOURNEY -->
+<section id="about" class="section" style="padding: 4rem 8%; color: #ffffff; background: #1a1a2e;">
+    <div class="container">
+        <h2 class="section-title fade-in">My Journey</h2>
+        <p class="fade-in" style="font-size: 1.1rem; margin-bottom: 3rem; color: rgba(255,255,255,0.85);">
+            From exploring the fundamentals of IT to building AI-powered solutions and full-stack web applications, my journey has been a blend of learning, experimenting, and creating impact. 🚀
+        </p>
+
+   <!-- Stats / Quick Achievements -->
+<section id="stats" style="padding: 4rem 8%; background: #0f1a2b; color: #ffffff;">
+    <div class="cards-grid" style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+
+        <!-- Projects Card -->
+        <div class="card" style="flex: 1; min-width: 220px; max-width: 300px; background: #162447; padding: 2rem 1.5rem; border-radius: 15px; text-align: center; transition: transform 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+            <i class="fas fa-project-diagram card-icon" style="font-size: 2.5rem; color: #6a9cff; margin-bottom: 1rem;"></i>
+            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Projects</h3>
+            <p class="card-text" style="font-size: 1rem; color: rgba(255,255,255,0.85);">full-stack and data science projects delivering real-world solutions.</p>
+        </div>
+
+        <!-- Research Papers Card -->
+        <div class="card" style="flex: 1; min-width: 220px; max-width: 300px; background: #162447; padding: 2rem 1.5rem; border-radius: 15px; text-align: center; transition: transform 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+            <i class="fas fa-file-alt card-icon" style="font-size: 2.5rem; color: #6a9cff; margin-bottom: 1rem;"></i>
+            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">2 Research Papers</h3>
+            <p class="card-text" style="font-size: 1rem; color: rgba(255,255,255,0.85);">2 AI & AR-focused research papers published in reputed journals.</p>
+        </div>
+
+        <!-- Leadership Roles Card -->
+        <div class="card" style="flex: 1; min-width: 220px; max-width: 300px; background: #162447; padding: 2rem 1.5rem; border-radius: 15px; text-align: center; transition: transform 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+            <i class="fas fa-chalkboard-teacher card-icon" style="font-size: 2.5rem; color: #6a9cff; margin-bottom: 1rem;"></i>
+            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Leadership Roles</h3>
+            <p class="card-text" style="font-size: 1rem; color: rgba(255,255,255,0.85);">Held key positions as Treasurer and Technical Representative in Student Association.</p>
+        </div>
+
+        <!-- Certifications Card -->
+        <div class="card" style="flex: 1; min-width: 220px; max-width: 300px; background: #162447; padding: 2rem 1.5rem; border-radius: 15px; text-align: center; transition: transform 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+            <i class="fas fa-certificate card-icon" style="font-size: 2.5rem; color: #6a9cff; margin-bottom: 1rem;"></i>
+            <h3 class="card-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">9+ Certifications</h3>
+            <p class="card-text" style="font-size: 1rem; color: rgba(255,255,255,0.85);">
+                Google Cloud, Infosys Springboard, Microsoft Learn, Coursera/IBM, Coursera/DeepLearning.AI, Udemy, NPTEL/SWAYAM, Kaggle, LinkedIn Learning
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Skills Showcase -->
+    <div class="skills-section fade-in" style="margin-top: 4rem; text-align: center;">
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Core Skills</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+            <span style="background: #6a9cff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500;">Data Science</span>
+            <span style="background: #6a9cff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500;">Full-Stack Dev</span>
+            <span style="background: #6a9cff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500;">AI & ML</span>
+            <span style="background: #6a9cff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500;">Leadership</span>
+            <span style="background: #6a9cff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500;">Teamwork</span>
+            <span style="background: #6a9cff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 500;">Problem Solving</span>
+        </div>
+    </div>
+</section>
+
+        <!-- Journey Timeline -->
+        <div class="timeline fade-in" style="margin-top: 4rem; border-left: 3px solid #6a9cff; padding-left: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;">Timeline</h3>
+            <div style="margin-bottom: 1rem;">
+                <strong>2020–2023:</strong> Diploma in IT, Shri Siddheshwar Women's Polytechnic
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>2023–2026:</strong> B.Tech CSE (AI & DS), Shree Siddheshwar Women's College of Engineering
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>2025:</strong> Published research papers in IJARSCT & IJCRT
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>2024–2026:</strong> Treasurer & Technical Representative, Student Association
+            </div>
+            <div>
+                <strong>2026:</strong> Data Science Internship, Sysslan IT Solutions
+            </div>
+        </div>
+
+        <!-- Closing / Motivational Line -->
+        <p class="fade-in" style="margin-top: 3rem; font-size: 1.1rem; color: #6a9cff; font-style: italic;">
+            “I build solutions that empower learning, data-driven decisions, and innovation. Let's create the future together!” 🚀
+        </p>
+    </div>
+</section>
+
+	<!-- EDUCATION -->
+<section id="education" class="section">
+    <div class="container">
+        <h2 class="section-title fade-in">Education</h2>
+
+        <div class="cards-grid">
+
+            <!-- B.TECH -->
+            <div class="card fade-in">
+                <i class="fas fa-university card-icon"></i>
+                <h3 class="card-title">Bachelor of Technology (B.Tech)</h3>
+                <p class="card-text">
+                    <b>Computer Science Engineering (Artificial Intelligence & Data Science)</b><br>
+                    Shree Siddheshwar Women’s College of Engineering, Solapur<br>
+                    Sep 2023 – Jul 2026<br><br>
+                    Specialized in Artificial Intelligence, Data Science, Machine Learning, Database Management Systems, and Full-Stack Development with strong practical and project-based learning.
+                </p>
+            </div>
+
+            <!-- DIPLOMA -->
+            <div class="card fade-in">
+                <i class="fas fa-laptop-code card-icon"></i>
+                <h3 class="card-title">Diploma in Information Technology</h3>
+                <p class="card-text">
+                    Shri Siddheshwar Women’s Polytechnic College<br>
+                    2020 – 2023<br><br>
+                    Gained a strong foundation in programming, networking, database systems, web technologies, and software fundamentals with hands-on laboratory experience.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+	
+
+    <!-- SKILLS -->
+<section id="skills" class="section" style="background: rgba(0,0,0,0.3);">
+    <div class="container">
+        <h2 class="section-title fade-in">Skills</h2>
+
+        <div class="cards-grid">
+
+            <!-- DATA & ANALYTICAL SKILLS -->
+            <div class="card fade-in">
+                <i class="fas fa-chart-line card-icon"></i>
+                <h3 class="card-title">Data & Analytical Skills</h3>
+                <p class="card-text">
+                    • Data Science<br>
+                    • Data Analysis<br>
+                    • Analytical Skills<br>
+                    • Microsoft Excel<br><br>
+                    Applied during <b>Data Science Internship</b> at Sysslan IT Solutions through task-based, real-world data analysis projects.
+                </p>
+            </div>
+
+            <!-- COMMUNICATION & HR SKILLS -->
+            <div class="card fade-in">
+                <i class="fas fa-comments card-icon"></i>
+                <h3 class="card-title">Communication & HR Skills</h3>
+                <p class="card-text">
+                    • Communication<br>
+                    • Intern Coordination<br>
+                    • Document Management<br>
+                    • Professional Email Handling<br><br>
+                    Practiced as an <b>HR Intern</b> at InAmigos Foundation while assisting recruitment, onboarding, and coordination tasks.
+                </p>
+            </div>
+
+            <!-- TEAM & LEADERSHIP SKILLS -->
+            <div class="card fade-in">
+                <i class="fas fa-users-cog card-icon"></i>
+                <h3 class="card-title">Team & Leadership Skills</h3>
+                <p class="card-text">
+                    • Team Management<br>
+                    • Teamwork<br>
+                    • Leadership<br>
+                    • Time Management<br><br>
+                    Developed through multi-role internships, collaborative projects, and leadership responsibilities.
+                </p>
+            </div>
+
+            <!-- OFFICE & PRODUCTIVITY TOOLS -->
+            <div class="card fade-in">
+                <i class="fas fa-file-word card-icon"></i>
+                <h3 class="card-title">Productivity Tools</h3>
+                <p class="card-text">
+                    • Microsoft Excel<br>
+                    • Microsoft Word<br><br>
+                    Used for documentation, reporting, data organization, and professional communication across internships.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- PROJECTS -->
+   <section id="projects" class="projects-section">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project-card fade-in">
+        <h3 class="project-title">Customer Behavior Analysis</h3>
+        <p class="project-description">
+            An end-to-end data analytics project analyzing <strong>3,900+ customer purchase records</strong>
+            to uncover buying patterns, customer segments, and product preferences.
+        </p>
+        <p class="project-description">
+            Delivered actionable insights to improve <strong>marketing strategies, retention, loyalty programs,
+            and revenue growth</strong>.
+        </p>
+        <span class="project-tag">Data Analysis</span>
+        <span class="project-tag">EDA</span>
+        <span class="project-tag">Business Insights</span>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card fade-in">
+        <h3 class="project-title">Student Performance Analysis Portal</h3>
+        <p class="project-description">
+            A full-stack academic monitoring platform with <strong>role-based dashboards</strong> for students
+            and teachers, integrating AI-driven insights for performance improvement.
+        </p>
+
+        <ul class="project-list">
+            <li>Attendance, assignments, marks & real-time notifications</li>
+            <li>AI-based resume, soft-skills & communication analysis</li>
+            <li>Behavioral quizzes and performance reports</li>
+            <li>Secure teacher portal with analytics-driven insights</li>
+        </ul>
+
+        <p class="project-tech">
+            <strong>Tech:</strong> HTML, CSS, JavaScript, PHP, MySQL, XAMPP
+        </p>
+    </div>
+
+    <!-- Project 3 -->
+<div class="project-card fade-in">
+    <h3 class="project-title">Academic Resource Management System</h3>
+    <p class="project-description">
+        A student-centric web application that provides <strong>easy access to notes, assignments,
+        and previous year question papers (PYQs)</strong> through a centralized and organized platform.
+    </p>
+    <p class="project-description">
+        The system simplifies academic preparation by reducing search time, improving content availability,
+        and ensuring structured learning resources for students.
+    </p>
+    <span class="project-tag">Education Tech</span>
+    <span class="project-tag">Web Application</span>
+</div>
+
+</section>
+
+    <!-- ACHIEVEMENTS -->
+<section id="achievements" class="achievements-section fade-in">
+    <h2 class="section-title">Achievements</h2>
+
+    <!-- Academic -->
+    <div class="achievement-card">
+        <h3>🎓 Academic & Professional</h3>
+
+        <p>
+            <strong>Research Paper – IJARSCT</strong><br>
+            “The Next Generation of Learning: AI Mentorship for a Transformative Educational Experience”<br>
+            <a href="https://ijarsct.co.in/Paper19969.pdf" target="_blank">View Paper →</a>
+        </p>
+
+        <p>
+            <strong>Research Paper – IJCRT</strong><br>
+            “StyleMate: A Conversational AI and AR-Based Personalized Shopping Experience”<br>
+            <a href="https://ijcrt.org/papers/IJCRT2511858.pdf" target="_blank">View Paper →</a>
+        </p>
+    </div>
+
+    <!-- Leadership -->
+    <div class="achievement-card">
+    <h3>👑 Leadership & Responsibility</h3>
+    <p>
+        Demonstrated strong organizational and leadership skills while managing key roles in the Student Association.
+        Successfully coordinated events, oversaw finances, and facilitated technical activities to enrich the
+        college community.
+    </p>
+    <ul>
+        <li>
+            <strong>Treasurer, Student Association (2024–2025)</strong><br>
+            Managed finances, budget allocations, and funding for college events. Designed banners, coordinated
+            guest lectures, and ensured smooth execution of student activities.
+        </li>
+        <li>
+            <strong>Technical Representative, Student Association (2025–2026)</strong><br>
+            Led technical initiatives, supported workshops, and collaborated with peers to enhance digital and
+            academic resources for students.
+        </li>
+    </ul>
+</div>
+
+
+    <!-- Writing -->
+    <div class="achievement-card">
+        <h3>✍️ Writing & Thought Leadership</h3>
+        <ul>
+            <li>
+                <a href="https://medium.com/@kp.patel1707/unmasking-deepfakes-ai-powered-face-swap-detection-techniques-c2bb8d235eee" target="_blank">
+                    Unmasking Deepfakes: AI-Powered Face-Swap Detection
+                </a>
+            </li>
+            <li>
+                <a href="https://medium.com/@kp.patel1707/will-ai-replace-the-need-for-humans-to-learn-coding-01b15908249a" target="_blank">
+                    Will AI Replace the Need for Humans to Learn Coding?
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+	<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+    <div class="container">
+        <h2 class="section-title fade-in">Certifications</h2>
+
+        <div class="cards-grid">
+
+            <div class="card fade-in">
+                <i class="fas fa-database card-icon"></i>
+                <h3 class="card-title">Introduction to Data Science</h3>
+                <p class="card-text">
+                    Issued by <b>LinkedIn</b><br>
+                    Issued Jan 2026
+					<a href="https://www.linkedin.com/learning/certificates/030e19fa495801f1837b0c740eaa378f8fcfe2126d03fc6637908fe234b5f4dd?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BGUsduNWoSsGDDdlkCb3IZg%3D%3D" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-trophy card-icon"></i>
+                <h3 class="card-title">TATA Crucible Campus Quiz 2025</h3>
+                <p class="card-text">
+                    Issued by <b>Unstop</b><br>
+                    Issued Nov 2025<br>
+                    Credential ID: 0a12ccfc-4f09-43a7-a041-a5762bd63e1e
+					 <a href=" <a href= "https://unstop.com/certificate-preview/0a12ccfc-4f09-43a7-a041-a5762bd63e1e?utm_campaign=site-emails" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-brain card-icon"></i>
+                <h3 class="card-title">Artificial Intelligence Fundamentals</h3>
+                <p class="card-text">
+                    Issued by <b>IBM SkillsBuild</b><br>
+                    Issued Aug 2025<br>
+                    Credential ID: eca0cc53-5a1d-4a20-9db1-cd53096730bb
+					 <a href="https://www.credly.com/earner/earned/badge/eca0cc53-5a1d-4a20-9db1-cd53096730bb" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-briefcase card-icon"></i>
+                <h3 class="card-title">Career Management Essentials</h3>
+                <p class="card-text">
+                    Issued by <b>IBM SkillsBuild</b><br>
+                    Issued Aug 2025<br>
+                    Credential ID: e8364784-1b5b-4766-bded-fabdc2c4b96b
+					 <a href="https://www.credly.com/earner/earned/badge/e8364784-1b5b-4766-bded-fabdc2c4b96b" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-shield-alt card-icon"></i>
+                <h3 class="card-title">Cybersecurity Fundamentals</h3>
+                <p class="card-text">
+                    Issued by <b>IBM SkillsBuild</b><br>
+                    Issued Aug 2025<br>
+                    Credential ID: 7c2596b8-ef95-4a31-a4f1-0fd747109882
+					 <a href="https://www.credly.com/earner/earned/badge/e8364784-1b5b-4766-bded-fabdc2c4b96b" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fab fa-python card-icon"></i>
+                <h3 class="card-title">Python</h3>
+                <p class="card-text">
+                    Issued by <b>HackerRank</b><br>
+                    Issued Aug 2025<br>
+                    <a href="https://www.hackerrank.com/certificates/iframe/a800100254da" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-lightbulb card-icon"></i>
+                <h3 class="card-title">Idea Submission Participation</h3>
+                <p class="card-text">
+                    Issued by <b>Unstop</b><br>
+                    Issued Apr 2025<br>
+                    Credential ID: c1b778ce-d61b-4ea1-abd7-6a52082b45c2
+					 <a href="https://unstop.com/certificate-preview/c1b778ce-d61b-4ea1-abd7-6a52082b45c2" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-robot card-icon"></i>
+                <h3 class="card-title">Introduction to Large Language Models</h3>
+                <p class="card-text">
+                    Issued by <b>United Latino Students Association</b><br>
+                    Issued Apr 2025<br>
+                    Credential ID: MOIW3X243N3E
+					 <a href="https://www.coursera.org/account/accomplishments/records/MOIW3X243N3E" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-scale-balanced card-icon"></i>
+                <h3 class="card-title">Introduction to Responsible AI</h3>
+                <p class="card-text">
+                    Issued by <b>United Latino Students Association</b><br>
+                    Issued Apr 2025<br>
+                    Credential ID: 2XZ535I76KNG
+					 <a href="https://www.coursera.org/account/accomplishments/verify/2XZ535I76KNG" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+            <div class="card fade-in">
+                <i class="fas fa-microchip card-icon"></i>
+                <h3 class="card-title">Artificial Intelligence & Machine Learning</h3>
+                <p class="card-text">
+                    Issued by <b>Skillsoft</b><br>
+                    Issued Dec 2024<br>
+                    Credential ID: 126445810
+					 <a href="https://skillsoft.digitalbadges.skillsoft.com/1ca3e7c1-ad63-4e02-92dd-744bc1e83ed8" target="_blank">
+                        View Credential
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- EXPERIENCE -->
+<section id="experience" class="section" style="background: rgba(0,0,0,0.3);">
+    <div class="container">
+        <h2 class="section-title fade-in">Experience</h2>
+
+        <div class="cards-grid">
+
+            <!-- DATA SCIENCE INTERN -->
+            <div class="card fade-in">
+                <i class="fas fa-chart-pie card-icon"></i>
+                <h3 class="card-title">Data Science Intern</h3>
+                <p class="card-text">
+                    <b>Sysslan IT Solutions</b> · Internship<br>
+                    Jan 2026 – Jan 2026 · 1 Month<br>
+                    India · Remote<br><br>
+                    Gained hands-on experience in data analysis and data science concepts by working on task-based, real-world projects. Focused on analytical thinking, problem-solving, and understanding data-driven workflows while following professional and ethical standards.
+                </p>
+            </div>
+
+            <!-- HR INTERN -->
+            <div class="card fade-in">
+                <i class="fas fa-users card-icon"></i>
+                <h3 class="card-title">HR Intern</h3>
+                <p class="card-text">
+                    <b>InAmigos Foundation (IAF)</b> · Internship<br>
+                    Dec 2025 – Jan 2026 · 2 Months<br>
+                    India · Remote<br><br>
+                    Assisted in recruitment and onboarding processes, coordinated with interns, managed offer letters and documentation, handled professional email communication, and supported daily HR operations. Ensured smooth coordination between the organization and interns.
+                </p>
+            </div>
+
+            <!-- AI CONTENT WRITER -->
+            <div class="card fade-in">
+                <i class="fas fa-pen-nib card-icon"></i>
+                <h3 class="card-title">AI Content Writer</h3>
+                <p class="card-text">
+                    <b>InAmigos Foundation (IAF)</b> · Internship<br>
+                    Nov 2025 – Dec 2025 · 2 Months<br>
+                    India · Remote<br><br>
+                    Created AI-driven content for social impact campaigns and awareness initiatives. Researched and developed structured write-ups on AI, education, and community-focused themes. Collaborated with teams to refine ideas and support organizational activities aligned with the NGO’s mission.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- CONTACT -->
+   <section id="contact" class="section">
+  <div class="container contact-container">
+    <h2 class="section-title">Let's Connect</h2>
+
+    <div class="contact-wrapper">
+      <!-- Contact Info -->
+      <div class="contact-card compact">
+       <div class="contact-item link-item email-item">
+  <div class="contact-icon">
+    <i class="fas fa-envelope"></i>
+  </div>
+  <div class="contact-info">
+    <h4>Email</h4>
+    <a href="mailto:kp.patel1707@gmail.com">
+      kp.patel1707@gmail.com
+    </a>
+  </div>
+</div>
+
+
+       <div class="contact-item link-item">
+  <div class="contact-icon">
+    <i class="fab fa-linkedin"></i>
+  </div>
+  <div class="contact-info">
+    <h4>LinkedIn</h4>
+    <a href="https://www.linkedin.com/in/kashish-patel-497b38251/" target="_blank">
+      Kashish Patel
+    </a>
+  </div>
+</div>
+
+<div class="contact-item link-item">
+  <div class="contact-icon">
+    <i class="fab fa-github"></i>
+  </div>
+  <div class="contact-info">
+    <h4>GitHub</h4>
+    <a href="https://github.com/Kashishpatel-17" target="_blank">
+      github.com/Kashishpatel-17
+    </a>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 <a href="https://www.linkedin.com/in/kashish-patel-497b38251/" target="_blank">Kashish Patel</a> | SSWCOE CSE(AIDS) '26 </p>
+    </footer>
+
+    <script>
+        // SCROLL PROGRESS INDICATOR
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+        });
+
+        // SMOOTH SCROLLING
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FADE-IN ANIMATIONS ON SCROLL
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // TRIGGER HERO ANIMATION ON LOAD
+        window.addEventListener('load', () => {
+            document.querySelector('.hero-content').classList.add('visible');
+        });
+    </script>
+	<script>
+
+window.addEventListener("scroll", () => {
+    const scrollProgress = document.querySelector(".scroll-progress");
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+    scrollProgress.style.width = scrollPercent + "%";
+});
+
+
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 150) {
+        navbar.style.transform = "translateX(-50%) translateY(-120px)";
+    } else {
+        navbar.style.transform = "translateX(-50%) translateY(0)";
+    }
+    lastScrollY = window.scrollY;
+});
+</script>
+
+</body>
+</html>
+
