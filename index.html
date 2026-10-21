@@ -33,14 +33,8 @@ h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.2rem);l
 .lede{color:var(--muted);max-width:60ch;margin-bottom:40px}
 
 /* hero */
-.hero{min-height:100vh;display:flex;align-items:center;gap:64px;padding-top:120px}
-.hero-text{flex:1;min-width:0}
-.photo{flex:none;order:2;width:min(340px,38vw);position:relative;margin-right:8px}
-.photo::before{content:'';position:absolute;inset:18px -18px -18px 18px;border-radius:28px;background:var(--accent-soft);border:1px solid #c9d0ff;transition:transform .4s}
-.photo:hover::before{transform:translate(8px,8px)}
-.photo-frame{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--serif);font-size:5rem;color:var(--accent)}
-.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,8vw,6rem);line-height:.98;letter-spacing:-.02em}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.6rem,11vw,8rem);line-height:.98;letter-spacing:-.02em}
 .hero h1 .ch{display:inline-block;opacity:0;transform:translateY(40px);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes up{to{opacity:1;transform:none}}
 .role{margin:28px 0 12px;font-size:1.15rem;font-weight:600}
@@ -143,8 +137,6 @@ button.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var
 footer{max-width:1100px;margin:80px auto 0;padding:30px 24px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
 footer a{color:var(--ink);font-weight:600;text-decoration:none}
 
-@media(max-width:860px){.hero{flex-direction:column;align-items:flex-start;gap:48px;padding-top:110px}.photo{order:0;width:min(260px,70vw)}}
-@media(max-width:700px){.edu-r{grid-template-columns:1fr;gap:6px}.brand{display:none}.nav-in{padding:0 16px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero h1 .ch{opacity:1;transform:none}}
 </style>
 </head>
@@ -166,7 +158,6 @@ footer a{color:var(--ink);font-weight:600;text-decoration:none}
 <main>
 <!-- HOME -->
 <section id="home" class="hero">
- <div class="photo rv"><div class="photo-frame">KP<img src="photo.jpg" alt="Portrait of Kashish Patel" onerror="this.remove()"></div></div>
  <div class="hero-text">
  <h1 id="name" aria-label="Kashish Patel">Kashish Patel</h1>
  <p class="role">B.Tech – Computer Science Engineering (AI &amp; Data Science), 2026 · M.Sc. Data Science and Engineering, Politecnico di Torino</p>
